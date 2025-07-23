@@ -1,24 +1,17 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+const learning_rate_input = document.getElementById('learning-rate') as HTMLInputElement;
+const learning_rate_value = document.getElementById('learning-rate-value') as HTMLSpanElement;
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+if(learning_rate_input && learning_rate_value) {
+  learning_rate_input.addEventListener('input', ()=>{
+    learning_rate_value.textContent = learning_rate_input.value;
+  });
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// const likey_text = document.getElementById('likey-text') as HTMLInputElement;
+// const likey_text_value = document.getElementById('likey-text-value') as HTMLSpanElement;
+
+// if(likey_text && likey_text_value) {
+//   likey_text.addEventListener('input', ()=>{
+//     likey_text_value.textContent = likey_text.value;
+//   });
+// }
